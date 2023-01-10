@@ -1,0 +1,445 @@
+{
+    "description": "Qubino Flush Shutter DC",
+    "parameters": [
+        {
+            "parameterNumber": 10,
+            "label": {
+                "en": "Activate / deactivate ALL ON / ALL OFF Functionality",
+                "pl": ""
+            },
+            "description": {
+                "en": "Flush Shutter DC device responds to the commands ALL ON / ALL OFF that may be sent by the primary or secondary gateway (hub) within the Z-Wave network.",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 255,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 255,
+                        "description": {
+                            "en": "ALL ON active, ALL OFF active",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "ALL ON not active, ALL OFF not active",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "ALL ON not active, ALL OFF active",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "ALL ON active, ALL OFF not active",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 40,
+            "label": {
+                "en": "Watt Power Consumption Reporting Threshold for Q1 or Q2 Loads",
+                "pl": ""
+            },
+            "description": {
+                "en": "Choose by how much the power consumption needs to increase or decrease to be reported. Values correspond to percentages.",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 10,
+            "format": {
+                "type": "range",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "scale": 1.0
+            }
+        },
+        {
+            "parameterNumber": 42,
+            "label": {
+                "en": "Power reporting in Watts by time interval for Q1 or Q2",
+                "pl": ""
+            },
+            "description": {
+                "en": "The set value refers to the time interval with which the power consumption in Watts is reported (0 – 32767 seconds). If 0 is entered, energy consumption reports will not be sent to the gateway (hub)",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 0,
+            "format": {
+                "type": "range",
+                "min": 0,
+                "max": 32767,
+                "step": 1,
+                "scale": 1.0
+            }
+        },
+        {
+            "parameterNumber": 71,
+            "label": {
+                "en": "Operating modes",
+                "pl": ""
+            },
+            "description": {
+                "en": "Choose between the two operating modes. If the venetian mode is selected, an additional widget/endpoint will be displayed on the UI interface, which can be used to control the tilt position of the slats. ",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "default - Shutter mode",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "venetian mode (up/down and slate rotation)",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 72,
+            "label": {
+                "en": " Slats tilting full turn time",
+                "pl": ""
+            },
+            "description": {
+                "en": "Set the time, required by the slats, to make a full turn (180 degrees).",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 630,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "tilting time disabled",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 32767,
+                        "step": 1,
+                        "scale": 0.1,
+                        "unit": "s"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 73,
+            "label": {
+                "en": "Slats position",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter is used to enable/disable the slats to return to the previously set position after being activated via the Z-Wave gateway(hub), push-button operation or when the lower limit switch is reached",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 1,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "disable",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "enable",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 74,
+            "label": {
+                "en": "Motor moving up/down time",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter defines the time, required by the Shutter motor, to completely open or completely close the attached shutters.",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "moving time disabled",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 32767,
+                        "step": 1,
+                        "scale": 0.1,
+                        "unit": "s"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 76,
+            "label": {
+                "en": " Motor operation detection",
+                "pl": ""
+            },
+            "description": {
+                "en": "Define the power consumption threshold at the end positions. Based on this value, the device will know, that the shutters reached the limit switches.",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 10,
+            "format": {
+                "type": "range",
+                "min": 5,
+                "max": 100,
+                "step": 1,
+                "scale": 1.0
+            }
+        },
+        {
+            "parameterNumber": 78,
+            "label": {
+                "en": "Forced Shutter calibration",
+                "pl": ""
+            },
+            "description": {
+                "en": "By changing the value of this parameter from 0 to 1, the Shutter enters the calibration mode.",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "calibration not active",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "Start the calibration process.",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 85,
+            "label": {
+                "en": "Power consumption max delay time",
+                "pl": ""
+            },
+            "description": {
+                "en": "Define the maximum time before the power consumption of the motor, after one of the relays is switched ON, is read from the device.",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 8,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "time is set automatically",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 3,
+                        "max": 50,
+                        "step": 1,
+                        "scale": 0.1
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 86,
+            "label": {
+                "en": "Power consumption at limit switch delay time",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter defines the maximum time after which the active output will switch off, due to reaching a limit switch. ",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 8,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "time is set automatically",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 3,
+                        "max": 50,
+                        "step": 1,
+                        "scale": 0.1
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 90,
+            "label": {
+                "en": "Time delay for next motor movement",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter defines the minimum time duration between successive motor movements (minimum time after which the motor is switched off and on again).",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 5,
+            "format": {
+                "type": "range",
+                "min": 1,
+                "max": 30,
+                "step": 1,
+                "scale": 1.0
+            }
+        },
+        {
+            "parameterNumber": 110,
+            "label": {
+                "en": "Temperature Sensor Offset Settings",
+                "pl": ""
+            },
+            "description": {
+                "en": "Set value is added to or subtracted from the actually measured value to adjust the temperature report sent by an external sensor (sold separately).",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 32536,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 32536,
+                        "description": {
+                            "en": "time is set automatically",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "scale": 0.1
+                    },
+                    {
+                        "type": "range",
+                        "min": 1001,
+                        "max": 1100,
+                        "step": 1,
+                        "scale": 0.1
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 120,
+            "label": {
+                "en": " Temperature Sensor Reporting Threshold",
+                "pl": ""
+            },
+            "description": {
+                "en": "If an external digital temperature sensor (sold separately) is connected to the device, it reports temperature readings based on the threshold defined in this parameter. ",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 5,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "time is set automatically",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 127,
+                        "step": 1,
+                        "scale": 0.1
+                    }
+                ]
+            }
+        }
+        
+    ]
+}
