@@ -1,0 +1,644 @@
+{
+    "description": "Qubino Mini Dimmer",
+    "parameters": [
+        {
+            "parameterNumber": 1,
+            "label": {
+                "en": "In-wall Switch Type for Load to control I",
+                "pl": ""
+            },
+            "description": {
+                "en": "With this parameter, you can select between momentary and on/off toggle switch types",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "momentary switch",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "on/off toggle switch",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 5,
+            "label": {
+                "en": "Working mode",
+                "pl": ""
+            },
+            "description": {
+                "en": "With this parameter, you can change the device presentation on the user interface (parameter only availible in firmwares 21.06 or lower)",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Dimmer mode",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "Switch mode (works only in 3-wire installation with neutral line)",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },   
+        {
+            "parameterNumber": 6,
+            "label": {
+                "en": "Load type",
+                "pl": ""
+            },
+            "description": {
+                "en": "With this parameter, you select the load type, dimmable or non dimmable. For non dimmable loads par. 6 must be set to 1. (parameter only availible in firmwares 31.06 or higher)",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Dimmable load",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "Non dimmable load",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },      
+        {
+            "parameterNumber": 11,
+            "label": {
+                "en": "Turn Load Off Automatically with Timer",
+                "pl": ""
+            },
+            "description": {
+                "en": "If Load is ON, you can schedule it to turn OFF automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an ON command.",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Auto OFF Disabled",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 32536,
+                        "step": 1,
+                        "scale": 1.0,
+                        "unit": "s"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 12,
+            "label": {
+                "en": "Turn Load On Automatically with Timer",
+                "pl": ""
+            },
+            "description": {
+                "en": "If Load is OFF, you can schedule it to turn ON automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an OFF command.",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Auto OFF Disabled",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 32536,
+                        "step": 1,
+                        "scale": 1.0,
+                        "unit": "s"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 21,
+            "label": {
+                "en": "Enable/Disable the Double click function",
+                "pl": ""
+            },
+            "description": {
+                "en": "If the Double click function is enabled, a fast double click on the momentary switch sets the dimming level to the maximum dimming value",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "double click disabled",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "double click enabled",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 30,
+            "label": {
+                "en": "Restore on/off status for load after power failure",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter determines if on/off status is saved and restored for the load after power failure",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Device saves last on/off status and restores it after a power failure.",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "Device does not save on/off status and does not restore it after a power failure, it remains off",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 40,
+            "label": {
+                "en": "Watt Power Consumption Reporting Threshold for Load",
+                "pl": ""
+            },
+            "description": {
+                "en": "Choose by how much the power consumption needs to increase or decrease to be reported. Values correspond to percentages.",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 10,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Power consumption reporting disabled",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "scale": 1.0,
+                        "unit": "%"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 42,
+            "label": {
+                "en": "Watt Power Consumption Reporting Time Threshold for Load",
+                "pl": ""
+            },
+            "description": {
+                "en": "The set value refers to the time interval with which the power consumption in Watts is reported (0 – 32767 seconds). If 0 is entered, energy consumption reports will not be sent to the gateway (hub)",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Power consumption reporting disabled",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 30,
+                        "max": 32767,
+                        "step": 1,
+                        "scale": 1.0,
+                        "unit": "s"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 60,
+            "label": {
+                "en": "Minimum dimming value",
+                "pl": ""
+            },
+            "description": {
+                "en": "The value set in this parameter determines the minimum dimming value, the lowest value which can be set on the device",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 15,
+            "format": {
+                "type": "range",
+                "min": 0,
+                "max": 98,
+                "step": 1,
+                "scale": 1.0,
+                "unit": "%"
+            }
+        },
+        {
+            "parameterNumber": 61,
+            "label": {
+                "en": "Maximum dimming value",
+                "pl": ""
+            },
+            "description": {
+                "en": "The value set in this parameter determines the maximum dimming value, the highest value which can be set on the device",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 99,
+            "format": {
+                "type": "range",
+                "min": 1,
+                "max": 99,
+                "step": 1,
+                "scale": 1.0,
+                "unit": "%"
+            }
+        },
+        {
+            "parameterNumber": 65,
+            "label": {
+                "en": "Dimming time when key pressed (soft on/off)",
+                "pl": ""
+            },
+            "description": {
+                "en": "Choose the time during which the device will move between the min. and max. dimming values by a short press of the momentary switch connected to terminal I",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 1,
+            "format": {
+                "type": "range",
+                "min": 1,
+                "max": 127,
+                "step": 1,
+                "scale": 1.0,
+                "unit": "s"
+            }
+        },
+        {
+            "parameterNumber": 66,
+            "label": {
+                "en": "Dimming time when key hold",
+                "pl": ""
+            },
+            "description": {
+                "en": "Choose the time during which the Dimmer will move between the min. and max. dimming values during a continuous press of the momentary switch connected to terminal I",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 3,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 127,
+                        "step": 1,
+                        "scale": 1.0,
+                        "unit": "s"
+                    },
+                    {
+                        "type": "range",
+                        "min": 128,
+                        "max": 253,
+                        "step": 1,
+                        "scale": 1.0,
+                        "unit": "min"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 67,
+            "label": {
+                "en": "Ignore start level",
+                "pl": ""
+            },
+            "description": {
+                "en": "Choose whether the device should use (or disregard) the start dimming level value. This parameter is used with association group 3",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "use the start level value",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": " ignore the start level value",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 68,
+            "label": {
+                "en": "Dimming duration for associations",
+                "pl": ""
+            },
+            "description": {
+                "en": "Choose the time during which the device will transition from the current value to the new target value. This parameter applies to the association group 3.",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "range",
+                "min": 0,
+                "max": 127,
+                "step": 1,
+                "scale": 1.0,
+                "unit": "s"
+            }
+        },
+        {
+            "parameterNumber": 70,
+            "label": {
+                "en": "Watt Power Consumption Reporting Time Threshold for Load",
+                "pl": ""
+            },
+            "description": {
+                "en": "The function allows for turning off the controlled device in case of exceeding the defined power for more than 5 s",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 200,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "function not active",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 200,
+                        "step": 1,
+                        "scale": 1.0,
+                        "unit": "W"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 71,
+            "label": {
+                "en": "Calibration trigger",
+                "pl": ""
+            },
+            "description": {
+                "en": "Choose when will be the calibration procedure triggered",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "calibration done after power cycle if module is excluded",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "calibration done after power cycle regardless of inclusion status",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "force calibration. Calibration will start immediately",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 72,
+            "label": {
+                "en": "Calibration status (read only)",
+                "pl": ""
+            },
+            "description": {
+                "en": "With this parameter you can check the calibration status",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 2,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "calibration was successful",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "calibration failed",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 73,
+            "label": {
+                "en": "Alarm/Notification events",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter defines the module behaviour in case it receives any Alarm/Notification events",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "function not active",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "turn ON",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "turn OFF",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 3,
+                        "description": {
+                            "en": "start blinking (output turns 1 s ON, and 1 s OFF)",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 74,
+            "label": {
+                "en": "Alarm/Notification time interval (dependant on parameter 73)",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter defines the time interval of the blinking state, once the module receives an alarm/notification event. Step increase is 1 minute.",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 10,
+            "format": {
+                "type": "range",
+                "min": 1,
+                "max": 125,
+                "step": 1,
+                "scale": 1.0,
+                "unit": "min"
+            }
+        }  
+    ]
+}

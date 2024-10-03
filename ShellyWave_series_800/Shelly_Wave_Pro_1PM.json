@@ -1,0 +1,523 @@
+{
+    "description": "Shelly Wave Pro 1PM",
+    "parameters": [
+        {
+            "parameterNumber": 1,
+            "label": {
+                "en": "SW1 Switch type"
+            },
+            "description": {
+                "en": "This parameter defines how the Device should treat the switch (which type) connected to the SW (SW1) terminal."
+            },
+            "size": 1,
+            "defaultValue": 2,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "momentary switch"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "toggle switch (contact closed - ON / contact opened - OFF)"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "toggle switch (device changes status when switch changes status)"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 2,
+            "label": {
+                "en": "SW2 Switch type"
+            },
+            "description": {
+                "en": "This parameter defines how the Device should treat the switch (which type) connected to the SW2 terminal."
+            },
+            "size": 1,
+            "defaultValue": 2,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "momentary switch"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "toggle switch (contact closed - ON / contact opened - OFF)"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "toggle switch (device changes status when switch changes status)"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 17,
+            "label": {
+                "en": "Restore state of O1 after power failure"
+            },
+            "description": {
+                "en": "This parameter determines if the on/off status is saved and restored for the load connected to O1 after a power failure."
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Device saves last on/off status and restores it after a power failure"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "Device does not save on/off status and does not restore it after a power failure, it remains off"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 19,
+            "label": {
+                "en": "O1 Auto OFF with timer"
+            },
+            "description": {
+                "en": "If the load O1 is ON, you can schedule it to turn OFF automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an ON command, either remotely (from the gateway or associated device) or locally from the switch."
+            },
+            "size": 2,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Auto OFF Disabled"
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 32535,
+                        "step": 1,
+                        "scale": 1.0
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 20,
+            "label": {
+                "en": "O1 Auto ON with timer"
+            },
+            "description": {
+                "en": "If the load O1 is OFF, you can schedule it to turn ON automatically after the period of time defined in this parameter. The timer resets to zero each time the Device receives an OFF command, either remotely (from the gateway or associated device) or locally from the switch."
+            },
+            "size": 2,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Auto ON Disabled"
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 32535,
+                        "step": 1,
+                        "scale": 1.0
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 23,
+            "label": {
+                "en": "O1 contact type - NO/NC"
+            },
+            "description": {
+                "en": "The set value determines the relay contact type for output O1. The relay contact type can be normally open (NO) or normally closed (NC)."
+            },
+            "size": 2,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "NO"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "NC"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 25,
+            "label": {
+                "en": "Set timer units to s or ms for O1"
+            },
+            "description": {
+                "en": "Set the timer units to seconds or milliseconds. Choose if you want to set the timer in seconds or milliseconds in Parameters No. 19, 20."
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "timer set in seconds"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "timer set in milliseconds"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 36,
+            "label": {
+                "en": "O (O1) Power report on change - percentage"
+            },
+            "description": {
+                "en": "This parameter determines the minimum change in consumed power that will result in sending new report to the gateway."
+            },
+            "size": 1,
+            "defaultValue": 50,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Power consumption reporting disabled"
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "scale": 1.0,
+                        "unit": "%"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 39,
+            "label": {
+                "en": "Minimal time between reports O (O1)"
+            },
+            "description": {
+                "en": "This parameter determines the minimum time that must elapse before a new power report on O (O1) is sent to the gateway."
+            },
+            "size": 1,
+            "defaultValue": 50,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Power consumption reporting disabled"
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 120,
+                        "step": 1,
+                        "scale": 1.0,
+                        "unit": "s"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 91,
+            "label": {
+                "en": "Water Alarm"
+            },
+            "description": {
+                "en": "This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification."
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "no action"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "open relay"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 3,
+                        "description": {
+                            "en": "close relay"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 92,
+            "label": {
+                "en": "Smoke Alarm"
+            },
+            "description": {
+                "en": "This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification."
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "no action"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "open relay"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 3,
+                        "description": {
+                            "en": "close relay"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 93,
+            "label": {
+                "en": "CO Alarm"
+            },
+            "description": {
+                "en": "This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification."
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "no action"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "open relay"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 3,
+                        "description": {
+                            "en": "close relay"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 94,
+            "label": {
+                "en": "Heat Alarm"
+            },
+            "description": {
+                "en": "This parameter determines which alarm frames the Device should respond to and how. The parameters consist of 4 bytes, the three most significant bytes are set according to the official Z-Wave protocol specification."
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "no action"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "open relay"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 3,
+                        "description": {
+                            "en": "close relay"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 120,
+            "label": {
+                "en": "Factory Reset"
+            },
+            "description": {
+                "en": "Reset to factory default settings and removed from the Z-Wave network. The parameter is Advanced and may be hidden under the Advanced tag."
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "No action"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "Factory reset"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 201,
+            "label": {
+                "en": "Serial Number 1"
+            },
+            "description": {
+                "en": "This parameter contains a part of device serial number. The parameter is Read-Only and cannot be changed. The parameter is Advanced and may be hidden under the Advanced tag."
+            },
+            "size": 4,
+            "defaultValue": 2147483647,
+            "format": {
+                "type": "range",
+                "min": 0,
+                "max": 2147483647,
+                "step": 1,
+                "scale": 1
+            }
+        },
+        {
+            "parameterNumber": 202,
+            "label": {
+                "en": "Serial Number 2"
+            },
+            "description": {
+                "en": "This parameter contains a part of device serial number. The parameter is Read-Only and cannot be changed. The parameter is Advanced and may be hidden under the Advanced tag."
+            },
+            "size": 4,
+            "defaultValue": 2147483647,
+            "format": {
+                "type": "range",
+                "min": 0,
+                "max": 2147483647,
+                "step": 1,
+                "scale": 1
+            }
+        },
+        {
+            "parameterNumber": 203,
+            "label": {
+                "en": "Serial Number 3"
+            },
+            "description": {
+                "en": "This parameter contains a part of device serial number. The parameter is Read-Only and cannot be changed. The parameter is Advanced and may be hidden under the Advanced tag."
+            },
+            "size": 4,
+            "defaultValue": 2147483647,
+            "format": {
+                "type": "range",
+                "min": 0,
+                "max": 2147483647,
+                "step": 1,
+                "scale": 1
+            }
+        }
+    ]
+}

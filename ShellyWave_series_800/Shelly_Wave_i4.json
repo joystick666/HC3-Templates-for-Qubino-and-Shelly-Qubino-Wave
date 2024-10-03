@@ -1,0 +1,256 @@
+{
+    "description": "Shelly Wave i4",
+    "parameters": [
+        {
+            "parameterNumber": 1,
+            "label": {
+                "en": "SW1 Switch type"
+            },
+            "description": {
+                "en": "This parameter defines how the Device should treat the switch (which type) connected to the SW (SW1) terminal."
+            },
+            "size": 1,
+            "defaultValue": 2,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "momentary switch"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "toggle switch (contact closed - ON / contact opened - OFF)"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "toggle switch (device changes status when switch changes status)"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 2,
+            "label": {
+                "en": "SW2 Switch type"
+            },
+            "description": {
+                "en": "This parameter defines how the Device should treat the switch (which type) connected to the SW2 terminal."
+            },
+            "size": 1,
+            "defaultValue": 2,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "momentary switch"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "toggle switch (contact closed - ON / contact opened - OFF)"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "toggle switch (device changes status when switch changes status)"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 3,
+            "label": {
+                "en": "SW3 Switch type"
+            },
+            "description": {
+                "en": "This parameter defines how the Device should treat the switch (which type) connected to the SW (SW1) terminal."
+            },
+            "size": 1,
+            "defaultValue": 2,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "momentary switch"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "toggle switch (contact closed - ON / contact opened - OFF)"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "toggle switch (device changes status when switch changes status)"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 4,
+            "label": {
+                "en": "SW4 Switch type"
+            },
+            "description": {
+                "en": "This parameter defines how the Device should treat the switch (which type) connected to the SW (SW1) terminal."
+            },
+            "size": 1,
+            "defaultValue": 2,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "momentary switch"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "toggle switch (contact closed - ON / contact opened - OFF)"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 2,
+                        "description": {
+                            "en": "toggle switch (device changes status when switch changes status)"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 105,
+            "label": {
+                "en": "LED Signalisation intensity"
+            },
+            "description": {
+                "en": "In Wave 1, Wave 1PM and Wave 2PM, this parameter will be implemented in 2024. This parameter determines the intensity of the LED on the Device. Some Devices have RGB LEDs and some have Blue/Red LEDs, but all are dimmable."
+            },
+            "size": 1,
+            "defaultValue": 100,
+            "format": {
+                "type": "range",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "scale": 1,
+                "unit": "%"
+            }
+        },
+        {
+            "parameterNumber": 120,
+            "label": {
+                "en": "Factory Reset"
+            },
+            "description": {
+                "en": "Reset to factory default settings and removed from the Z-Wave network. The parameter is Advanced and may be hidden under the Advanced tag."
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "No action"
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "Factory reset"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 201,
+            "label": {
+                "en": "Serial Number 1"
+            },
+            "description": {
+                "en": "This parameter contains a part of device serial number. The parameter is Read-Only and cannot be changed. The parameter is Advanced and may be hidden under the Advanced tag."
+            },
+            "size": 4,
+            "defaultValue": 2147483647,
+            "format": {
+                "type": "range",
+                "min": 0,
+                "max": 2147483647,
+                "step": 1,
+                "scale": 1
+            }
+        },
+        {
+            "parameterNumber": 202,
+            "label": {
+                "en": "Serial Number 2"
+            },
+            "description": {
+                "en": "This parameter contains a part of device serial number. The parameter is Read-Only and cannot be changed. The parameter is Advanced and may be hidden under the Advanced tag."
+            },
+            "size": 4,
+            "defaultValue": 2147483647,
+            "format": {
+                "type": "range",
+                "min": 0,
+                "max": 2147483647,
+                "step": 1,
+                "scale": 1
+            }
+        },
+        {
+            "parameterNumber": 203,
+            "label": {
+                "en": "Serial Number 3"
+            },
+            "description": {
+                "en": "This parameter contains a part of device serial number. The parameter is Read-Only and cannot be changed. The parameter is Advanced and may be hidden under the Advanced tag."
+            },
+            "size": 4,
+            "defaultValue": 2147483647,
+            "format": {
+                "type": "range",
+                "min": 0,
+                "max": 2147483647,
+                "step": 1,
+                "scale": 1
+            }
+        }
+    ]
+}
