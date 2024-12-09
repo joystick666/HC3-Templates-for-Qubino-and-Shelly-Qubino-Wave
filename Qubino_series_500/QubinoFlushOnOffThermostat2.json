@@ -1,0 +1,409 @@
+{
+    "description": "Qubino Flush 1 Relay",
+    "parameters": [
+        {
+            "parameterNumber": 1,
+            "label": {
+                "en": "Input I1 switch type",
+                "pl": ""
+            },
+            "description": {
+                "en": "Select between push-button (momentary) and on/off toggle switch types",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 1,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "push-button (momentary)",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "on/off toggle switch",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+              
+        
+        {
+            "parameterNumber": 4,
+            "label": {
+                "en": "Input 1 contact type",
+                "pl": ""
+            },
+            "description": {
+                "en": "Select between normally open (NO) or normally closed (NC) input type.",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "NO (normally open) input type",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "NC (normally close) input type",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },  
+        
+    
+        {
+            "parameterNumber": 40,
+            "label": {
+                "en": "Watt Power Consumption Reporting Threshold for Q1 Load",
+                "pl": ""
+            },
+            "description": {
+                "en": "Choose by how much the power consumption needs to increase or decrease to be reported. Values correspond to percentages.",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 10,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Power consumption reporting disabled",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 100,
+                        "step": 1,
+                        "scale": 1.0,
+                        "unit": "%"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 42,
+            "label": {
+                "en": "Power reporting in Watts by time interval for Q1",
+                "pl": ""
+            },
+            "description": {
+                "en": "The set value refers to the time interval with which the power consumption in Watts is reported (0 – 32767 seconds). If 0 is entered, energy consumption reports will not be sent to the gateway (hub)",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Power consumption reporting disabled",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 32535,
+                        "step": 1,
+                        "scale": 1.0,
+                        "unit": "s"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 43,
+            "label": {
+                "en": "Hysteresis Upper temperature offset",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter defines minimum temperature difference between real measured temperature and set-point temperature to turn device on.",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 5,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                                        
+                    {
+                        "type": "range",
+                        "min": 0,
+                        "max": 250,
+                        "step": 1,
+                        "scale": 0.1,
+                        "unit": "C"
+                    }
+                ]
+            }
+        },
+        {
+            "parameterNumber": 44,
+            "label": {
+                "en": "Hysteresis Lower temperature offset",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter defines minimum temperature difference between real measured temperature and set-point temperature to turn device on.",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 5,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                                        
+                    {
+                        "type": "range",
+                        "min": 0,
+                        "max": 250,
+                        "step": 1,
+                        "scale": 0.1,
+                        "unit": "C"
+                    }
+                ]
+            }
+        },
+        
+        {
+            "parameterNumber": 59,
+            "label": {
+                "en": "Thermostat mode",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter Heating or cooling",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                                        
+                    {
+                         "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": " Heating Mode",
+                            "pl": ""
+
+                    }
+                },
+                {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "Cooling Mode",
+                            "pl": ""
+                        }
+                    }
+
+                ]
+            }
+        },
+
+
+
+       {
+            "parameterNumber": 60,
+            "label": {
+                "en": "Too low temperature limit",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter determines the temperature at which the device sends a command to the associated device – to turn ON device or to turn OFF device.",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 50,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                                        
+                    {
+                        "type": "range",
+                        "min": 150,
+                        "max": 1000,
+                        "step": 1,
+                        "scale": 0.1,
+                        "unit": "C"
+                    }
+                ]
+            }
+        },
+
+
+
+
+
+        {
+            "parameterNumber": 63,
+            "label": {
+                "en": "Choose Normally Closed or Normally Open for Q⬆ Load",
+                "pl": ""
+            },
+            "description": {
+                "en": "Set value determines the type of the device connected to the Q⬆ output. The output type can be normally open (NO) or normally closed (NC)",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "When switch/device is off the output is 0V (NC)",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "When switch/device is off the output is 240V or 24VDC (NO)",
+                            "pl": ""
+                        }
+                    }
+                ]
+            }
+        },
+        
+        {
+            "parameterNumber": 78,
+            "label": {
+                "en": "Scale Selection",
+                "pl": ""
+            },
+            "description": {
+                "en": "This parameter Celsius or Fahrenheit",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                                        
+                    {
+                         "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": " degrees Celsius",
+                            "pl": ""
+
+                    }
+                },
+                {
+                        "type": "value",
+                        "value": 1,
+                        "description": {
+                            "en": "degrees Fahrenheit",
+                            "pl": ""
+                        }
+                    }
+
+                ]
+            }
+        },
+
+        
+        
+        
+        {
+            "parameterNumber": 110,
+            "label": {
+                "en": "Temperature Sensor Offset Settings",
+                "pl": ""
+            },
+            "description": {
+                "en": "Set value is added to or subtracted from the actually measured value to adjust the temperature report sent by an external sensor (sold separately).",
+                "pl": ""
+            },
+            "size": 2,
+            "defaultValue": 0,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    
+                    {
+                        "type": "range",
+                        "min": -150,
+                        "max": 150,
+                        "step": 1,
+                        "scale": 0.1
+                    }
+                    
+                ]
+            }
+        },
+        {
+            "parameterNumber": 120,
+            "label": {
+                "en": " Temperature Sensor Reporting Threshold",
+                "pl": ""
+            },
+            "description": {
+                "en": "If an external digital temperature sensor (sold separately) is connected to the device, it reports temperature readings based on the threshold defined in this parameter. ",
+                "pl": ""
+            },
+            "size": 1,
+            "defaultValue": 5,
+            "format": {
+                "type": "enumerated",
+                "values": [
+                    {
+                        "type": "value",
+                        "value": 0,
+                        "description": {
+                            "en": "Reporting disabled",
+                            "pl": ""
+                        }
+                    },
+                    {
+                        "type": "range",
+                        "min": 1,
+                        "max": 127,
+                        "step": 1,
+                        "scale": 0.1
+                    }
+                ]
+            }
+        }
+        
+    ]
+}
